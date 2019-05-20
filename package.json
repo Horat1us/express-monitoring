@@ -8,7 +8,9 @@
     "test": "jest",
     "build": "rm -rf ./build && npm run build:types && npm run build:js",
     "build:types": "tsc --emitDeclarationOnly --declaration --rootDir ./src --outDir ./build ./src/*.ts",
-    "build:js": "babel src --extensions '.ts' --out-dir build"
+    "build:js": "babel src --extensions '.ts' --out-dir build",
+    "lint": "tslint --project .",
+    "lint:fix": "tslint --fix --project ."
   },
   "repository": {
     "type": "git",

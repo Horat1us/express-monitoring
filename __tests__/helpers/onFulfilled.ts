@@ -1,31 +1,29 @@
 import { onFulfilled } from "../../src/helpers";
 import { State } from "../../src";
 
-describe('onFulfilled', () => {
-    const getExecutionTime = () => ({ begin: 0, total: 0 });
+describe("onFulfilled", () => {
+    const ExecutionTime = { begin: (new Date).getTime() / 1000, total: 1 };
+    const getExecutionTime = () => ExecutionTime;
 
-    test('correct state', () => {
+    test("correct state", () => {
         const response = onFulfilled(getExecutionTime)();
         expect(response.state).toStrictEqual(State.ok);
     });
 
-    test('without details', () => {
+    test("without details", () => {
         const response = onFulfilled(getExecutionTime)();
         expect(response).not.toHaveProperty("details");
     });
 
-    test('with details', () => {
-        const number = Math.random();
-        const details = { number };
+    test("with details", () => {
+        const random = Math.random();
+        const details = { random };
         const response = onFulfilled(getExecutionTime)(details);
 
         expect(response.details).toStrictEqual(details);
     });
 
-    test('execution time', () => {
-        const ExecutionTime = { begin: (new Date).getTime() / 1000, total: 1 };
-        const getExecutionTime = () => ExecutionTime;
-
+    test("execution time", () => {
         const response = onFulfilled(getExecutionTime)();
 
         expect(response.ms).toStrictEqual(ExecutionTime);

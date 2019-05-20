@@ -1,8 +1,8 @@
 import * as controls from "../../src/controls";
 import { Control, FailureError, State, SuccessResponse } from "../../src";
 
-describe('Compose', () => {
-    test('return details containing controls responses', async () => {
+describe("Compose", () => {
+    test("return details containing controls responses", async () => {
         const resultA = "Result A";
         const resultB = "Result B";
         const controlA = jest.fn().mockResolvedValue(resultA);
@@ -23,7 +23,7 @@ describe('Compose', () => {
         expect(details.B.details).toEqual(resultB);
     });
 
-    test('throw error if some control return error', async () => {
+    test("throw error if some control return error", async () => {
         const resultA = "Result A";
         const resultB = new FailureError("Failure", 1);
         const controlA = jest.fn().mockResolvedValue(resultA);

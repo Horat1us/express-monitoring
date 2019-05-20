@@ -5,9 +5,9 @@ const type = (new Date).toISOString();
 const details = {
     key: Math.random(),
 };
-const message = 'Test Failure';
+const message = "Test Failure";
 
-test('constructor()', () => {
+test("constructor()", () => {
     const error = new FailureError(message, code, details, type);
 
     expect(error.message).toStrictEqual(message);
@@ -16,7 +16,7 @@ test('constructor()', () => {
     expect(error.type).toStrictEqual(type);
 });
 
-test('toRaw()', () => {
+test("toRaw()", () => {
     const error = new FailureError(message, code, details, type);
     const raw = error.toRaw();
 
@@ -25,13 +25,13 @@ test('toRaw()', () => {
     });
 });
 
-test('toRaw() without details', () => {
+test("toRaw() without details", () => {
     const error = new FailureError(message, code, undefined, type);
 
     expect(error.toRaw().details).toBeUndefined();
 });
 
-test('toRaw() without type', () => {
+test("toRaw() without type", () => {
     const error = new FailureError(message, code);
 
     expect(error.toRaw().type).toStrictEqual("FailureError");

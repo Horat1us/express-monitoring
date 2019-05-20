@@ -14,11 +14,10 @@ export class FailureError<TDetails = Details> extends Error implements ErrorDeta
     }
 
     public toRaw(): ErrorDetails<TDetails> {
-        const { code, type, details, message } = this;
-        const error: ErrorDetails<TDetails> =  { code, type,  message };
+        const error: ErrorDetails<TDetails> =  { code: this.code, type: this.type,  message: this.message };
 
-        if (details) {
-            error.details = details;
+        if (this.details) {
+            error.details = this.details;
         }
 
         return error;

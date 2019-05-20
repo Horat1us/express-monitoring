@@ -1,10 +1,10 @@
 import express from "express";
-import { Request } from 'jest-express/lib/request';
-import { Response } from 'jest-express/lib/response';
+import { Request } from "jest-express/lib/request";
+import { Response } from "jest-express/lib/response";
 import { Controller, FailureError, State } from "../src";
 
-jest.mock('express', () => {
-    return require('jest-express');
+jest.mock("express", () => {
+    return require("jest-express");
 });
 
 describe("Controller", () => {
@@ -25,7 +25,7 @@ describe("Controller", () => {
         });
 
         test("map", () => {
-            const controls = new Map;
+            const controls = new Map();
             const controller = new Controller({ controls });
 
             expect(controller.controls).toEqual(controls);
@@ -49,9 +49,9 @@ describe("Controller", () => {
         let response: express.Response;
         beforeAll(() => {
             controller = new Controller({
-                controls: new Map,
+                controls: new Map(),
             });
-            response = new Response as any;
+            response = new Response() as any;
         });
 
         test("returns 400 if missing id", async () => {
@@ -119,9 +119,9 @@ describe("Controller", () => {
         let response: express.Response;
         beforeAll(() => {
             controller = new Controller({
-                controls: new Map,
+                controls: new Map(),
             });
-            response = new Response as any;
+            response = new Response() as any;
         });
 
         test("returns compose control response", async () => {

@@ -48,15 +48,15 @@ export class Controller {
         const control = this.controls.get(id) as Control;
 
         return this.execute(res, control);
-    };
+    }
 
     public readonly full = async (req: express.Request, res: express.Response) => {
         const control = controls.Compose(this.controls);
         return this.execute(res, control);
-    };
+    }
 
     private readonly execute = async (res: express.Response, control: Control) => {
         const response = await helpers.resolve(control);
         return res.status(200).json(response);
-    };
+    }
 }

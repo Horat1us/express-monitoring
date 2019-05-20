@@ -1,27 +1,14 @@
 {
     "extends": [
-        "tslint:latest",
-        "tslint-react"
+        "tslint:latest"
     ],
     "rules": {
         "no-empty-interface": true,
-        "jsx-alignment": true,
-        "jsx-equals-spacing": [
-            true,
-            "never"
-        ],
         "no-implicit-dependencies": false,
+        "new-parens": false,
         "no-console": false,
-        "jsx-no-multiline-js": false,
         "only-arrow-functions": false,
         "space-before-function-paren": false,
-        "jsx-key": true,
-        "jsx-no-bind": true,
-        "jsx-no-lambda": true,
-        "jsx-no-string-ref": true,
-        "jsx-self-close": true,
-        "jsx-wrap-multiline": true,
-        "jsx-boolean-value": false,
         "no-magic-numbers": false,
         "no-reference": true,
         "curly": true,
