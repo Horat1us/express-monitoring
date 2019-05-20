@@ -1,0 +1,42 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Controller control handler returns 400 if missing id 1`] = `
+[MockFunction] {
+  "calls": Array [
+    Array [
+      Object {
+        "code": 0,
+        "message": "Missing required params: id.",
+        "name": "Bad Request",
+        "status": 400,
+      },
+    ],
+  ],
+  "results": Array [
+    Object {
+      "type": "return",
+      "value": undefined,
+    },
+  ],
+}
+`;
+
+exports[`Controller control handler returns 404 if requested control not found 1`] = `
+[MockFunction] {
+  "calls": Array [
+    Array [
+      Object {
+        "code": -2,
+        "message": "Control controlID not found.",
+        "name": "Not Found",
+      },
+    ],
+  ],
+  "results": Array [
+    Object {
+      "type": "return",
+      "value": undefined,
+    },
+  ],
+}
+`;
